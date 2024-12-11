@@ -5,7 +5,7 @@ using UnityEngine;
 public class TextureScroller: MonoBehaviour
 {
 public float speed = .5f;
-Renderer renderer;
+new Renderer renderer;
 float offset;
 
     // Start is called before the first frame update

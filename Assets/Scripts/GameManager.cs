@@ -19,28 +19,30 @@ bool isGameOver = false;
     // Update is called once per frame
     void Update()
     {
-      if (isGameOver)
+      if(isGameOver)
       return;
 
       totalTimeElapsed += Time.deltaTime;
       gameTime -= Time.deltaTime;
 
-      if (gameTime <=0)
+      if (gameTime <= 0)
       isGameOver = true;
     }
 
   public void AdjustTime(float amount)
     {
         gameTime += amount;
-        if (amount < 0)
+        if(amount < 0)
             SlowWorldDown();
     }
 
     void SlowWorldDown()
     {
+    // Cancel any invokes to speed the world up 
+    // Then slow the world down for 1 second
         CancelInvoke();
         Time.timeScale = 0.5f;
-        Invoke("SpeedWorldUp", 1);
+        Invoke("SpeedWorldUp",1);
     }
     void SpeedWorldUp()
     {
@@ -54,7 +56,7 @@ bool isGameOver = false;
             GUI.Box(boxRect, "Time Remaining");
 
             Rect labelRect = new Rect(Screen.width / 2 - 10, Screen.height - 80, 20,40);
-            GUI.Label(labelRect, ((int)gameTime).ToString());
+            GUI.Label(labelRect,((int)gameTime).ToString());
         }
         else
         { 
