@@ -15,4 +15,4 @@ public class GameCritic : MonoBehaviour
 
 //The whole game was rather tedious for me. Constantly running towards or away from the obstacles was just boring there was nothing really appealing about the game.
 
-
+}
